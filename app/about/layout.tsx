@@ -12,7 +12,7 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return( <>
-        <nav>About NavBar</nav>
+        {/* <nav>About NavBar</nav> */}
         <main className=" min-h-[100vh] grid place-content-center">
             {children}
         </main>
