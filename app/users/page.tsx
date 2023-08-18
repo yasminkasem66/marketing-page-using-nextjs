@@ -4,21 +4,21 @@ import React from 'react'
 
 export default async function UsersPage() {
   const userData: Promise<UserRes> = getAllUsers();
-  const users  = await userData;
-   const content = (
-    <section>
-      <h2>
-        <Link href="/"> Back to home page</Link>
-      </h2>
+  const users = await userData;
+  const content = (
+    <section className='flex justify-center items-center flex-col'>
       {
-        users.results.map((user,i) => {
+        users.results.map((user, i) => {
           return (
-               <p key={user.url}>
-                <Link href={`/users/${i+1}`}>{user.name}</Link>
-              </p>
-           )
+            <p key={user.url}>
+              <Link href={`/users/${i + 1}`}>{user.name}</Link>
+            </p>
+          )
         })
       }
+      <h2 className=' mt-20'>
+        <Link href="/"> Back to home page</Link>
+      </h2>
     </section>
   )
   return (
